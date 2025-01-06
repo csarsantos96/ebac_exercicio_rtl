@@ -16,4 +16,7 @@ const Post = ({ children, imageUrl }: Props) => (
     </div>
 );
 
-export default Post;
+export default Post;  
+
+
+// vou deixar esse aqui como teste falho.
