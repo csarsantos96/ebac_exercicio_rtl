@@ -1,23 +1,21 @@
 import { render, screen } from "@testing-library/react";
-import Post from ".."; 
+import Post from ".."; // Importa o componente
 
 describe("Teste para o componente Post", () => {
-    test("Deve renderizar corretamente", () => {
+test("Deve renderizar corretamente", () => {
     
-    render(<Post imageUrl="https://via.placeholder.com/250x250">Teste</Post>);
+    render(<Post imageUrl="https://via.placeholder.com/150x150">Teste</Post>);
 
-    
     expect(screen.getByText("Teste")).toBeInTheDocument();
 
-    
     const postImage = screen.getByAltText("Post");
     expect(postImage).toBeInTheDocument();
     expect(postImage).toHaveAttribute(
     "src",
-    "https://via.placeholder.com/250x250"
+    "https://via.placeholder.com/150x150"
     );
 
     
     expect(screen.getByTestId("post-comments")).toBeInTheDocument();
-    });
+});
 });

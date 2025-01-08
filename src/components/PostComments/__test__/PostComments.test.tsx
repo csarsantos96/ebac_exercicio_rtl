@@ -4,7 +4,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import PostComments from ".."; // Importo o componente
 
 describe("Teste para o componente PostComments", () => {
-    test("Deve adicionar dois comentários corretamente", () => {
+test("Deve adicionar dois comentários corretamente", () => {
     render(<PostComments />);
 
     const commentTextarea = screen.getByRole("textbox");
@@ -25,14 +25,12 @@ describe("Teste para o componente PostComments", () => {
     target: { value: "Segundo comentário" },
     });
 
-    // Verifica se o texto foi digitado corretamente
     expect(commentTextarea).toHaveValue("Segundo comentário");
 
     fireEvent.click(submitButton);
 
-    // Verifica se o segundo comentário foi adicionado à lista
     expect(screen.getByText("Segundo comentário")).toBeInTheDocument();
 
     expect(screen.getAllByTestId("post-comment")).toHaveLength(2);
-    });
+});
 });
